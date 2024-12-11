@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>500 - An Unexpected </title>
+
+    <style>
+         body {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            font-family: sans-serif;
+            background-color: #E7FFFF;
+        }
+
+        h1,
+        a {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+        }
+
+        .main {
+            padding: 4rem 2rem;
+        }
+
+        .main .error {
+            font-size: 150px;
+            color: #fd054f;
+            text-shadow:
+                1px 1px 1px #fd054f,
+                2px 2px 1px #fd054f,
+                3px 3px 1px #fd054f,
+                4px 4px 1px #fd054f,
+                5px 5px 1px #fd054f,
+                6px 6px 1px #fd054f,
+                7px 7px 1px #fd054f,
+                8px 8px 1px #fd054f,
+                25px 25px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .text {
+            margin: 2rem 0;
+            font-size: 20px;
+            font-weight: 600;
+            color: #444;
+        }
+
+        .back-home {
+            display: inline-block;
+            border: 2px solid #222;
+            color: #222;
+            text-transform: uppercase;
+            font-weight: 600;
+            padding: 0.75rem 1rem 0.6rem;
+            transition: all 0.2s linear;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+        }
+
+        .back-home:hover {
+            background: #000000;
+            color: #ddd;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <h1 class="error">500</h1>
+        <div class="text">Ooops!!! An Unexpected Error Occurred</div>
+        <a class="back-home" href="{{ url_for('main.index') }}">Back to home</a>
+    </div>
+</body>
+</html>

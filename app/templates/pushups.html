@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Push-ups Tracker</title>
+</head>
+<body>
+    {% extends "base.html" %} {% block head %} {{ super() }}
+    {% endblock %}
+
+    {% block content %}
+    <h1>Push-ups Tracker</h1>
+
+    <form method="POST" action="{{ url_for('pushups.pushups_home') }}">
+        <label for="pushup_count">Push-ups:</label>
+        <input type="number" name="pushup_count" id="pushup_count" required>
+        <br>
+        <label for="comment">Comment:</label>
+        <input type="text" name="comment" id="comment">
+        <br>
+        <button type="submit">Add Push-ups</button>
+    </form>
+
+    <h2>Your Logs:</h2>
+    <ul>
+        {% for log in pushups %}
+
+            <li>
+                <strong>{{ log[1] }} push-ups</strong> - {{ log[2] }}
+                ({{ log[3] }})
+                <a href="{{ url_for('pushups.edit_pushup', id=log[0]) }}">Edit</a>
+                <a href="{{ url_for('pushups.delete_pushup', id=log[0]) }}">Delete</a>
+            </li>
+        {% endfor %}
+
+
+    </ul>
+     {% endblock %}
+</body>
+</html>
